@@ -1,0 +1,538 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#176b45">
+  <title>GramConnect | Community Grievance Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="GramConnect home">
+      <span class="brand-mark">G</span>
+      <span>
+        <strong>GramConnect</strong>
+        <small>Village • School • Community</small>
+      </span>
+    </a>
+
+    <button id="languageBtn" class="small-btn" type="button">
+      ಕನ್ನಡ
+    </button>
+  </header>
+
+  <main>
+
+    <!-- HOME -->
+    <section id="home" class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow"
+           data-en="YOUR VOICE. YOUR COMMUNITY."
+           data-kn="ನಿಮ್ಮ ಧ್ವನಿ. ನಿಮ್ಮ ಸಮುದಾಯ.">
+          YOUR VOICE. YOUR COMMUNITY.
+        </p>
+
+        <h1 data-en="Report a problem. Follow it until it is solved."
+            data-kn="ಸಮಸ್ಯೆಯನ್ನು ವರದಿ ಮಾಡಿ. ಪರಿಹಾರವಾಗುವವರೆಗೆ ಗಮನಿಸಿ.">
+          Report a problem. Follow it until it is solved.
+        </h1>
+
+        <p data-en="A simple demonstration portal for village residents, students, parents and community members."
+           data-kn="ಗ್ರಾಮಸ್ಥರು, ವಿದ್ಯಾರ್ಥಿಗಳು, ಪೋಷಕರು ಮತ್ತು ಸಮುದಾಯದ ಸದಸ್ಯರಿಗಾಗಿ ಸರಳ ಮಾದರಿ ಪೋರ್ಟಲ್.">
+          A simple demonstration portal for village residents, students, parents and community members.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-light" href="#submit">
+            Submit a complaint
+          </a>
+
+          <a class="btn btn-outline" href="#track">
+            Track complaint
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-side">
+        <div class="hero-icon">🏡</div>
+        <strong>One place for community issues</strong>
+        <span>Report • Review • Resolve • Feedback</span>
+      </div>
+    </section>
+
+    <!-- DEMO NOTICE -->
+    <section class="notice">
+      <strong>Demo project:</strong>
+      This version stores sample records only in this browser.
+      It is not connected to a Gram Panchayat or government department.
+      Do not enter private, emergency or highly sensitive information.
+    </section>
+
+    <!-- USERS -->
+    <section class="audience-grid" aria-label="Who can use GramConnect">
+
+      <article class="audience-card">
+        <span>👨‍👩‍👧</span>
+        <strong>Village residents</strong>
+        <small>Roads, water, lights and sanitation</small>
+      </article>
+
+      <article class="audience-card">
+        <span>🎒</span>
+        <strong>Students &amp; parents</strong>
+        <small>Transport, toilets and school facilities</small>
+      </article>
+
+      <article class="audience-card">
+        <span>♿</span>
+        <strong>All community members</strong>
+        <small>Public services and accessibility</small>
+      </article>
+
+    </section>
+
+    <!-- NAVIGATION -->
+    <nav class="tabs" aria-label="Portal sections">
+      <a href="#submit">Submit complaint</a>
+      <a href="#track">Track</a>
+      <a href="#officer">Officer desk</a>
+      <a href="#qr">QR access</a>
+      <a href="#about">About</a>
+    </nav>
+
+    <!-- COMPLAINT FORM -->
+    <section id="submit" class="panel">
+
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">CITIZEN / STUDENT</p>
+          <h2>Submit a complaint</h2>
+        </div>
+        <span class="step-pill">01 / REPORT</span>
+      </div>
+
+      <form id="complaintForm">
+
+        <div class="form-grid">
+
+          <label>
+            <span>Your name (optional)</span>
+            <input
+              id="reporterName"
+              type="text"
+              maxlength="60"
+              placeholder="Enter your name">
+          </label>
+
+          <label>
+            <span>I am a...</span>
+            <select id="reporterType" required>
+              <option value="">Choose one</option>
+              <option>Village resident</option>
+              <option>Student</option>
+              <option>Parent / Guardian</option>
+              <option>Other community member</option>
+            </select>
+          </label>
+
+          <label>
+            <span>Issue group</span>
+            <select id="issueGroup" required>
+              <option value="">Select issue group</option>
+              <option value="Village">Village infrastructure</option>
+              <option value="School">School-related</option>
+              <option value="Community">Public / community services</option>
+              <option value="Other">Other</option>
+            </select>
+          </label>
+
+          <label>
+            <span>Issue category</span>
+            <select id="category" required>
+              <option value="">Select group first</option>
+            </select>
+          </label>
+
+          <label>
+            <span>Village / Area</span>
+            <input
+              id="area"
+              type="text"
+              placeholder="Enter village or area"
+              maxlength="100"
+              required>
+          </label>
+
+          <label>
+            <span>Specific location (optional)</span>
+            <input
+              id="place"
+              type="text"
+              placeholder="Street, school, landmark etc."
+              maxlength="150">
+          </label>
+
+        </div>
+
+        <label>
+          <span>Describe your problem</span>
+          <textarea
+            id="description"
+            rows="5"
+            maxlength="2000"
+            placeholder="Explain the problem clearly..."
+            required></textarea>
+        </label>
+
+        <!-- PHOTO UPLOAD -->
+        <div class="upload-section">
+          <label for="complaintPhotos">
+            <span>Upload complaint photos (maximum 2)</span>
+          </label>
+
+          <input
+            id="complaintPhotos"
+            type="file"
+            accept="image/*"
+            multiple>
+
+          <div id="photoPreview" class="evidence"></div>
+        </div>
+
+        <!-- VOICE RECORDING -->
+        <div class="record-section">
+          <h3>Voice complaint (optional)</h3>
+
+          <p>Record your complaint using your microphone.</p>
+
+          <div class="hero-actions">
+            <button
+              id="startRecord"
+              class="btn btn-secondary"
+              type="button">
+              Start recording
+            </button>
+
+            <button
+              id="stopRecord"
+              class="btn btn-muted"
+              type="button"
+              disabled>
+              Stop recording
+            </button>
+          </div>
+
+          <p id="recordStatus">No recording</p>
+
+          <audio id="audioPreview" controls hidden></audio>
+
+          <button
+            id="deleteAudio"
+            class="btn btn-muted"
+            type="button"
+            hidden>
+            Delete recording
+          </button>
+        </div>
+
+        <label class="consent-row">
+          <input id="demoConsent" type="checkbox" required>
+          <span>
+            I understand that this is a demonstration portal and my
+            complaint will only be stored in this browser.
+          </span>
+        </label>
+
+        <button class="btn btn-primary" type="submit">
+          Submit complaint
+        </button>
+
+        <div id="submitMessage" class="form-message" aria-live="polite"></div>
+
+      </form>
+    </section>
+
+    <!-- TRACK COMPLAINT -->
+    <section id="track" class="panel">
+
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">COMPLAINT STATUS</p>
+          <h2>Track your complaint</h2>
+        </div>
+        <span class="step-pill">02 / TRACK</span>
+      </div>
+
+      <form id="trackForm">
+
+        <label>
+          <span>Enter your complaint ID</span>
+          <input
+            id="trackId"
+            type="text"
+            placeholder="Example: GC-2026-123456"
+            required>
+        </label>
+
+        <button class="btn btn-primary" type="submit">
+          Track complaint
+        </button>
+
+      </form>
+
+      <div id="trackResult" aria-live="polite"></div>
+
+    </section>
+
+    <!-- OFFICER DASHBOARD -->
+    <section id="officer" class="panel">
+
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">DEMO ADMINISTRATION</p>
+          <h2>Officer desk</h2>
+        </div>
+        <span class="step-pill">03 / REVIEW</span>
+      </div>
+
+      <p class="muted">
+        Demonstration dashboard. It is not a secure government officer login.
+      </p>
+      
+<!-- OFFICER LOGIN -->
+<div id="officerLogin" class="officer-editor">
+  <h3>Demo Officer Login</h3>
+
+  <form id="officerLoginForm">
+
+    <label>
+      <span>Email address</span>
+      <input
+        id="loginEmail"
+        type="email"
+        placeholder="Enter officer email"
+        required>
+    </label>
+
+    <label>
+      <span>Password</span>
+      <input
+        id="loginPassword"
+        type="password"
+        placeholder="Enter password"
+        required>
+    </label>
+
+    <button class="btn btn-primary" type="submit">
+      Login
+    </button>
+
+    <div id="loginMessage" class="form-message"
+         aria-live="polite"></div>
+
+  </form>
+</div>
+
+
+      <div id="officerList" hidden></div>
+
+      <div class="officer-editor" id="officerEditor" hidden>
+        <button id="officerLogout" class="btn btn-muted" type="button">
+  Logout
+</button>
+
+        <h3>Update complaint</h3>
+
+        <form id="officerForm">
+
+          <label>
+            <span>Complaint ID</span>
+            <input
+              id="officerComplaintId"
+              type="text"
+              placeholder="Select a complaint above"
+              required>
+          </label>
+
+          <label>
+            <span>Complaint status</span>
+            <select id="officerStatus" required>
+              <option value="Submitted">Submitted</option>
+              <option value="Under Review">Under Review</option>
+              <option value="In Progress">In Progress</option>
+              <option value="Resolved">Resolved</option>
+              <option value="Reopened">Reopened</option>
+            </select>
+          </label>
+
+          <label>
+            <span>Department</span>
+            <input
+              id="department"
+              type="text"
+              placeholder="Enter responsible department"
+              maxlength="100">
+          </label>
+
+          <label>
+            <span>Officer remarks / update</span>
+            <textarea
+              id="officerRemarks"
+              rows="4"
+              maxlength="1000"
+              placeholder="Enter progress or solution details..."></textarea>
+          </label>
+
+          <label>
+            <span>Upload solution photo (optional)</span>
+            <input
+              id="solutionPhoto"
+              type="file"
+              accept="image/*">
+          </label>
+
+          <div id="solutionPreview" class="evidence"></div>
+
+          <button class="btn btn-primary" type="submit">
+            Save officer update
+          </button>
+
+          <div id="officerMessage" class="form-message" aria-live="polite"></div>
+
+        </form>
+
+      </>
+    </section>
+
+    <!-- QR ACCESS -->
+    <section id="qr" class="panel">
+
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">QUICK ACCESS</p>
+          <h2>QR complaint access</h2>
+        </div>
+        <span class="step-pill">04 / QR ACCESS</span>
+      </div>
+
+      <p>
+        Create a QR code that opens the complaint portal with a
+        selected group, category and area.
+      </p>
+
+      <label>
+        <span>Public website URL</span>
+        <input
+          id="siteUrl"
+          type="url"
+          placeholder="https://your-website.com"
+          required>
+      </label>
+
+      <label>
+        <span>Issue group</span>
+        <select id="qrGroup">
+          <option value="">Select issue group</option>
+          <option value="Village">Village infrastructure</option>
+          <option value="School">School-related</option>
+          <option value="Community">Public / community services</option>
+          <option value="Other">Other</option>
+        </select>
+      </label>
+
+      <label>
+        <span>Issue category</span>
+        <select id="qrCategory">
+          <option value="">Select group first</option>
+        </select>
+      </label>
+
+      <label>
+        <span>Village / Area</span>
+        <input
+          id="qrArea"
+          type="text"
+          placeholder="Enter village or area">
+      </label>
+
+      <button
+        id="makeQr"
+        class="btn btn-primary"
+        type="button">
+        Generate QR code
+      </button>
+
+      <div id="qrOutput" class="qr-output" aria-live="polite"></div>
+
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="panel about-panel">
+
+      <p class="eyebrow">ABOUT GRAMCONNECT</p>
+
+      <h2>From complaint to resolution</h2>
+
+      <p>
+        GramConnect is a student project concept to make community
+        concerns easier to report, follow and review. It includes
+        village, school and public-service issues, with text, voice
+        and photo evidence.
+      </p>
+
+      <p>
+        <strong>Our goal:</strong>
+        To make it easier for residents, students and community
+        members to communicate their problems.
+      </p>
+
+      <p>
+        <strong>Safety:</strong>
+        Do not submit emergencies, allegations involving child safety,
+        personal medical details, passwords, identity documents or
+        other highly sensitive information through this demo.
+        Such matters need appropriate official and confidential
+        reporting channels.
+      </p>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      GramConnect • Student demonstration project •
+      Not an official government website
+    </footer>
+
+  </main>
+  
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+
+<script>
+const firebaseConfig = {
+  apiKey: "AIzaSyDBkLFAmimFmZatRnT_jNyFCDWYBQKkGj0",
+  authDomain: "gramconnect-cbc6b.firebaseapp.com",
+  projectId: "gramconnect-cbc6b",
+  storageBucket: "gramconnect-cbc6b.firebasestorage.app",
+  messagingSenderId: "886178565666",
+  appId: "1:886178565666:web:a4f645fb58f56c7d02447b"
+};
+
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+const auth = firebase.auth();
+</script>
+
+
+  <!-- JAVASCRIPT -->
+  <script src="script.js"></script>
+
+</body>
+</html>
